@@ -1,0 +1,41 @@
+<!--  Menggunakan if Statement -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reactjs</title>
+</head>
+<body>
+ 
+  <div id="root"></div>
+
+  
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+  
+  <script>
+    function UserGreeting() {
+      const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+      let message;
+      if (isLoggedIn) {
+        message = <h1>Welcome back, user!</h1>;
+      } else {
+        message = <h1>Please sign up.</h1>;
+      }
+
+      return (
+        <div>
+          {message}
+          <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+            {isLoggedIn ? 'Logout' : 'Login'}
+          </button>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<UserGreeting />, document.getElementById('root'));
+  </script>
+</body>
+</html>
