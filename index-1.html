@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reactjsg</title>
+</head>
+<body>
+  <!-- Elemen ini adalah tempat React akan merender komponen -->
+  <div id="root"></div>
+
+  <!-- Menyertakan React dan React DOM -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- React Script -->
+  <script>
+    // Mendefinisikan komponen fungsi bernama "GreetingWithTime"
+    function GreetingWithTime() {
+      // Mendapatkan waktu saat ini
+      const now = new Date().toLocaleTimeString();
+
+      // Komponen ini mengembalikan elemen JSX yang berisi pesan dan waktu saat ini
+      return (
+        <div>
+          <h1>Welcome to Reactjs!</h1>
+          <p>Current time is: {now}</p>
+        </div>
+      );
+    }
+
+    // Merender komponen "GreetingWithTime" ke dalam elemen dengan id "root"
+    ReactDOM.render(<GreetingWithTime />, document.getElementById('root'));
+  </script>
+</body>
+</html>
