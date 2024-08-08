@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reactjs</title>
+</head>
+<body>
+  
+  <div id="root"></div>
+
+  
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+  
+  <script>
+    
+    function Counter() {
+     
+      const [count, setCount] = React.useState(0);
+
+     
+      function handleClick() {
+        setCount(count + 1);
+      }
+
+      
+      return (
+        <div>
+          <h1>Button clicked: {count} times</h1>
+          <button onClick={handleClick}>Click me!</button>
+        </div>
+      );
+    }
+
+    // Merender komponen "Counter" ke dalam elemen dengan id "root"
+    ReactDOM.render(<Counter />, document.getElementById('root'));
+  </script>
+</body>
+</html>
